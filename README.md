@@ -1,4 +1,4 @@
-###数据类型
+##数据类型
 pytorch中有两种变量类型，一个是Tensor，一个是Variable。 
 
 - Tensor： 就像ndarray一样,一维Tensor叫Vector，二维Tensor叫Matrix，三维及以上称为Tensor 
@@ -12,7 +12,7 @@ torch.autograd.Variable,
 
 -----------
 
-###基本操作
+##基本操作
 torch对于数组/矩阵的操作和numpy非常相似
 
 比如有如下表达：
