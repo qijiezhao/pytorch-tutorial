@@ -1,4 +1,4 @@
-##数据类型
+## 数据类型
 pytorch中有两种变量类型，一个是Tensor，一个是Variable。 
 
 - Tensor： 就像ndarray一样,一维Tensor叫Vector，二维Tensor叫Matrix，三维及以上称为Tensor 
@@ -12,7 +12,7 @@ torch.autograd.Variable,
 
 -----------
 
-##基本操作
+## 基本操作
 torch对于数组/矩阵的操作和numpy非常相似
 
 比如有如下表达：
@@ -70,7 +70,7 @@ torch对于数组/矩阵的操作和numpy非常相似
 #
 	True
 
-###Variable自动求梯度的一些性质
+### Variable自动求梯度的一些性质
 
 【Input】
 #
@@ -155,7 +155,7 @@ putorch求梯度、更新参数的过程非常灵活，如下是对部分数据�
 
 ----------
 
-###整体NN结构
+### 整体NN结构
 
 #
 	import torch.nn as nn # layers like conv,fc
@@ -246,7 +246,7 @@ freeze resnet18前面的conv层，只训练fc层
 	# Optimize only the classifier
 	optimizer = optim.SGD(model.fc.parameters(), lr=1e-2, momentum=0.9)
 
-###volatile
+### volatile
 在纯推断模式的时候，只要是输入volatile=True，那么输出Variable的volatile必为True。这就比使用requires_grad=False方便多了
 
 【Input】
@@ -271,7 +271,7 @@ freeze resnet18前面的conv层，只训练fc层
 
 ----------
 
-###training data
+### training data
 pytorch团队帮我们写了一个torchvision包。使用torchvision就可以轻松实现数据的加载和预处理
 
 #
@@ -314,7 +314,7 @@ in the training process
 	    # training code (TBA)
 	    pass
 
-###Save and load models
+### Save and load models
 #
 	# 保存和加载整个模型
 	torch.save(model_object, 'model.pkl')
@@ -325,7 +325,7 @@ in the training process
 	torch.save(model_object.state_dict(), 'params.pkl')
 	model_object.load_state_dict(torch.load('params.pkl'))
 
-###自定义自己的datasets
+### 自定义自己的datasets
 #
 	class CustomDataset(data.Dataset):#需要继承data.Dataset
 	    def __init__(self):
@@ -344,7 +344,7 @@ in the training process
 	        return 0
 	#具体请参考MNIST加载数据集的代码：[anaconda_root]/lib/python2.7/site-packages/torchvision/datasets/mnist.py
 
-###hook
+### hook
 forward:
 #
 	import torch
